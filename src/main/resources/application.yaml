@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: demo
+  cloud:
+    function:
+      definition: >-
+        listenExample;
+    stream:
+      bindings:
+        listenExample-in-0:
+          destination: example-topic
+          group: example-group
+          consumer:
+            use-native-decoding: true
+      kafka:
+        binder:
+          auto-create-topics: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  main:
+    lazy-initialization: true
