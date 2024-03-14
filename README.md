@@ -31,7 +31,7 @@ Sent message 3
 Recieved message 3
 ```
 
-But when the `lazy-initialization` property is set to `false`, the listener does not reveice any messages, the output log only contains the sent messages:
+But when the `lazy-initialization` property is set to `true`, the listener does not reveice any messages, the output log only contains the sent messages:
 
 ```
 Sent message 1
